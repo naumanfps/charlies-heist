@@ -1,0 +1,367 @@
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Charlie's Heist</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+      /* Remove all scrollbars — the game must fit inside the iframe viewport */
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #ffffff;
+      }
+      /* Make the container fill the full viewport and center the canvas */
+      #unity-container.unity-desktop {
+        position: fixed;
+        inset: 0;
+        width: 100%; height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: none;
+        overflow: hidden;
+        background: radial-gradient(ellipse at 15% 10%, rgba(244, 91, 53, .09), transparent 36%), radial-gradient(ellipse at 88% 92%, rgba(120, 103, 213, .08), transparent 38%), #f7f5f1;
+      }
+      html, body { margin: 0; padding: 0; background: #f7f5f1; color: #211f25; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      #unity-canvas { display: block; flex: none; background: #f7f5f1; }
+      #unity-container.unity-mobile { position: fixed; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #f7f5f1; }
+      /*
+       * The rotate nudge, built by the sizing block below. Hidden until the player is
+       * holding the phone the other way from the way the game booted, and
+       * pointer-events:none — a hint must never swallow a tap meant for the board.
+       */
+      #inari-rotate-hint {
+        position: absolute;
+        left: 50%;
+        bottom: calc(14px + env(safe-area-inset-bottom));
+        transform: translateX(-50%);
+        z-index: 6;
+        display: none;
+        max-width: min(86vw, 430px);
+        padding: 8px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(33, 31, 37, .14);
+        background: rgba(255, 254, 250, .92);
+        box-shadow: 0 10px 28px rgba(39, 29, 20, .14);
+        color: #45404a;
+        font: 600 11px/1.45 Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        letter-spacing: .03em;
+        text-align: center;
+        pointer-events: none;
+        backdrop-filter: blur(10px);
+      }
+      /* Hide Unity's default footer bar (logo + fullscreen button) inside iframe */
+      #unity-footer, #unity-loading-bar { display: none !important; }
+      #inari-loading-screen { position: absolute; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center; padding: 24px; overflow: hidden; background: radial-gradient(ellipse at 15% 10%, rgba(244,91,53,.09), transparent 36%), radial-gradient(ellipse at 88% 92%, rgba(120,103,213,.08), transparent 38%), #f7f5f1; }
+      #inari-loading-screen::before { position: absolute; inset: 0; content: ""; opacity: .22; background-image: linear-gradient(rgba(33,31,37,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(33,31,37,.045) 1px, transparent 1px); background-size: 40px 40px; mask-image: radial-gradient(ellipse at center, black, transparent 82%); }
+      .inari-loader-card { position: relative; width: min(400px, 100%); padding: clamp(25px, 5vw, 40px); border: 1px solid rgba(33,31,37,.13); border-radius: 25px; background: linear-gradient(145deg, rgba(255,254,250,.98), rgba(247,245,241,.98)); box-shadow: 0 32px 100px rgba(39,29,20,.09), inset 0 1px rgba(255,255,255,.9); backdrop-filter: blur(24px); }
+      .inari-loader-brand { display: flex; align-items: center; gap: 10px; color: #211f25; font-size: 11px; font-weight: 800; letter-spacing: .16em; }
+      .inari-loader-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: linear-gradient(145deg,#ff8c68,#ed492d); box-shadow: 0 6px 20px rgba(244,91,53,.24); color: white; font-size: 18px; letter-spacing: -.08em; }
+      .inari-loader-brand b { color: #d94725; font-size: 9px; letter-spacing: .19em; }
+      .inari-loader-kicker { margin: 30px 0 9px; color: #625d65; font-size: 9px; font-weight: 800; letter-spacing: .19em; }
+      .inari-loader-title { margin: 0; color: #211f25; font-size: clamp(29px,5vw,40px); font-weight: 750; letter-spacing: -.055em; line-height: 1.08; }
+      .inari-loader-description { margin: 11px 0 26px; color: #625d65; font-size: 13px; line-height: 1.7; }
+      .inari-loader-track { height: 5px; overflow: hidden; border-radius: 99px; background: rgba(33,31,37,.1); }
+      .inari-loader-fill { width: 4%; height: 100%; border-radius: inherit; background: linear-gradient(90deg,#f04d32,#ffad70); box-shadow: 0 0 18px rgba(255,117,79,.42); transition: width 220ms ease; }
+      .inari-loader-status { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; color: #625d65; font-size: 10px; }
+      .inari-loader-status strong { color: #211f25; font-size: 11px; font-variant-numeric: tabular-nums; }
+      .inari-loader-dot { display: inline-block; width: 6px; height: 6px; margin-right: 7px; border-radius: 50%; background: #16803c; box-shadow: 0 0 12px rgba(22,163,74,.28); animation: inari-pulse 1.5s ease-in-out infinite; }
+      #inari-loading-screen.is-error { border-color: rgba(255,117,79,.35); }
+      #inari-loading-screen.is-error .inari-loader-dot { background: #ff7954; box-shadow: 0 0 12px rgba(255,117,79,.65); animation: none; }
+      @keyframes inari-pulse { 50% { opacity: .35; transform: scale(.8); } }
+      @media (max-width:480px) { #inari-loading-screen { padding: 18px; } .inari-loader-card { border-radius: 20px; } .inari-loader-kicker { margin-top: 24px; } }
+      @media (prefers-reduced-motion: reduce) { .inari-loader-dot { animation: none; } .inari-loader-fill { transition: none; } }
+    </style>
+  </head>
+
+  <body>
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width="540" height="960" tabindex="-1"></canvas>
+
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+
+      <div id="unity-warning"></div>
+
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Charlie's Heist</div>
+      </div>
+      <div id="inari-loading-screen" role="status" aria-live="polite">
+        <div class="inari-loader-card">
+          <div class="inari-loader-brand"><span class="inari-loader-mark">i</span><span>INARI <b>ARCADE</b></span></div>
+          <p class="inari-loader-kicker">TEN CLUES · TWO ROUTES · ONE GETAWAY</p>
+          <h1 class="inari-loader-title">Charlie's Heist</h1>
+          <p class="inari-loader-description" id="inari-loader-description">Laying out the city and year networks. Charlie&rsquo;s trail of clues is almost ready to follow.</p>
+          <div class="inari-loader-track" aria-hidden="true"><div class="inari-loader-fill" id="inari-loader-fill"></div></div>
+          <div class="inari-loader-status"><span><i class="inari-loader-dot"></i><span id="inari-loader-message">Preparing the game…</span></span><strong id="inari-loader-percent">0%</strong></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var warningBanner = document.querySelector("#unity-warning");
+      var inariLoader = document.querySelector("#inari-loading-screen");
+      var inariLoaderFill = document.querySelector("#inari-loader-fill");
+      var inariLoaderPercent = document.querySelector("#inari-loader-percent");
+      var inariLoaderMessage = document.querySelector("#inari-loader-message");
+      var inariLoaderDescription = document.querySelector("#inari-loader-description");
+
+      function showLoaderError(message) {
+        if (inariLoader) inariLoader.classList.add("is-error");
+        if (inariLoaderMessage) inariLoaderMessage.textContent = message || "The game could not start.";
+        if (inariLoaderPercent) inariLoaderPercent.textContent = "!";
+        if (inariLoaderDescription) inariLoaderDescription.textContent = "Try refreshing the page. If the problem continues, the game build may need attention.";
+      }
+
+      // Shows a temporary message banner/ribbon for a few seconds,
+      // or a permanent error message on top of the canvas if type=='error'.
+      function unityShowBanner(msg, type) {
+        function updateBannerVisibility() {
+          warningBanner.style.display =
+            warningBanner.children.length ? "block" : "none";
+        }
+
+        var div = document.createElement("div");
+        div.innerHTML = msg;
+
+        warningBanner.appendChild(div);
+
+        if (type == "error") {
+          div.style = "background: red; padding: 10px;";
+        } else {
+          if (type == "warning") {
+            div.style = "background: yellow; padding: 10px;";
+          }
+
+          setTimeout(function () {
+            warningBanner.removeChild(div);
+            updateBannerVisibility();
+          }, 5000);
+        }
+
+        updateBannerVisibility();
+      }
+
+      var buildUrl = "Build";
+      var buildName = encodeURIComponent("charlies-heist");
+      var loaderUrl = buildUrl + "/" + buildName + ".loader.js";
+
+      var config = {
+        dataUrl: buildUrl + "/" + buildName + ".data",
+        frameworkUrl: buildUrl + "/" + buildName + ".framework.js",
+        codeUrl: buildUrl + "/" + buildName + ".wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Inari Games LLC",
+        productName: "Charlie's Heist",
+        productVersion: "0.1.0",
+        showBanner: unityShowBanner,
+      };
+
+      // By default, Unity keeps the WebGL canvas render target size
+      // matched with the DOM size of the canvas element.
+      //
+      // config.matchWebGLToCanvasSize = false;
+
+      // If you would like all file writes inside Unity
+      // Application.persistentDataPath to automatically persist:
+      //
+      // config.autoSyncPersistentDataPath = true;
+
+      /*
+       * ============================================================
+       * DISPLAY SIZING — one path for phone and desktop
+       * ============================================================
+       *
+       * The <canvas> element ships as width="540" height="960". That attribute pair is
+       * not decoration: it IS the WebGL render buffer, and the Unity player reads it as
+       * Screen.width / Screen.height at boot. So the BUFFER — not the CSS box — decides
+       * which layout the game builds, because OrientationLayoutSwitcher chooses
+       * 1080x1920 or 1920x1080 from the screen aspect.
+       *
+       * The previous code sized a 16:9 CSS box around a 9:16 buffer. On a portrait phone
+       * that is exactly the thin strip down the middle of the screen: bitmap and box
+       * disagreed about the aspect ratio, and object-fit: contain settled the disagreement
+       * by shrinking the game to whichever dimension both could agree on.
+       *
+       * Now the buffer and the box are chosen together, from the viewport the player
+       * actually has — landscape gets the 960x540 board, portrait gets the 540x960 one.
+       * Nothing locks the device: spec §3.1 forbids that, and the game has a working
+       * layout for both. All this changes is that the page stops telling the player a
+       * different aspect story from the one the game is rendering.
+       */
+
+      var DESIGN = {
+        landscape: { w: 960, h: 540 },
+        portrait: { w: 540, h: 960 }
+      };
+
+      function currentOrientation() {
+        return window.innerWidth >= window.innerHeight ? "landscape" : "portrait";
+      }
+
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // No pinch-zoom, and draw under the notch / home indicator.
+        var meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content =
+          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover";
+        document.getElementsByTagName("head")[0].appendChild(meta);
+        container.className = "unity-mobile";
+        canvas.className = "unity-mobile";
+      } else {
+        container.className = "unity-desktop";
+      }
+
+      /*
+       * The buffer is decided ONCE, at boot. Resizing canvas.width underneath a running
+       * player is not something the WebGL loader promises the engine will follow — Unity
+       * owns that render target — so a mid-session rotation adjusts the CSS box and
+       * nudges the player, rather than mutating the buffer while the game is live.
+       */
+      var bootedOrientation = currentOrientation();
+      var design = DESIGN[bootedOrientation];
+      canvas.width = design.w;
+      canvas.height = design.h;
+
+      var rotateHint = null;
+
+      /*
+       * A hint, not a gate. The board is wider than it is tall, so landscape shows more
+       * of it at a comfortable size; the portrait layout is fully playable (spec §3.1
+       * names portrait as a supported target), so this never blocks input, dims the
+       * canvas or pauses the game.
+       */
+      function showRotateHint(show) {
+        if (!isMobile) return;
+        if (!rotateHint) {
+          rotateHint = document.createElement("div");
+          rotateHint.id = "inari-rotate-hint";
+          rotateHint.setAttribute("aria-live", "polite");
+          rotateHint.textContent = "Rotate for the wide board — portrait works too.";
+          container.appendChild(rotateHint);
+        }
+        rotateHint.style.display = show ? "block" : "none";
+      }
+
+      function fitCanvas() {
+        var vw = window.innerWidth;
+        var vh = window.innerHeight;
+        var aspect = design.w / design.h;
+        var cssW, cssH;
+
+        // The largest box of the game's OWN aspect that fits the viewport. Stretching to
+        // 100% width and 100% height would crop, and phones are 19.5:9 or 20:9, not 16:9.
+        if (vw / vh > aspect) {
+          cssH = vh;
+          cssW = Math.floor(cssH * aspect);
+        } else {
+          cssW = vw;
+          cssH = Math.floor(cssW / aspect);
+        }
+
+        canvas.style.width = cssW + "px";
+        canvas.style.height = cssH + "px";
+        canvas.style.position = "absolute";
+        canvas.style.left = "50%";
+        canvas.style.top = "50%";
+        canvas.style.transform = "translate(-50%, -50%)";
+
+        showRotateHint(currentOrientation() !== bootedOrientation);
+      }
+
+      fitCanvas();
+      window.addEventListener("resize", fitCanvas);
+      window.addEventListener("orientationchange", function () {
+        setTimeout(fitCanvas, 100);
+      });
+
+      // Optional mobile performance setting:
+      // config.devicePixelRatio = 1;
+
+      // ---- Host bridge: /play/{slug} → Unity -----------------------------------
+      // The host page posts control commands as JSON strings ({cmd:"unlocked"} or
+      // {cmd:"load",date:"YYYY-MM-DD"}). Unity receives them through
+      // InaBridge.OnHostCommand; SendMessage cannot reach a loader that has no
+      // instance yet, so commands are buffered until startup completes. The game
+      // deduplicates repeated deliveries of the same command.
+      var inaUnityInstance = null;
+      var inaPendingHostCommands = [];
+      function inaForwardHostCommand(message) {
+        try {
+          if (inaUnityInstance) inaUnityInstance.SendMessage("InaBridge", "OnHostCommand", message);
+          else inaPendingHostCommands.push(message);
+        } catch (e) { /* never break the game over a host command */ }
+      }
+      window.addEventListener("message", function (event) {
+        if (event.source !== window.parent) return; // only the hosting /play page
+        if (event.origin !== window.location.origin) return; // same-origin trust policy
+        if (typeof event.data !== "string") return;
+        var command;
+        try { command = JSON.parse(event.data); } catch (e) { return; }
+        if (!command || typeof command !== "object") return;
+        if (command.cmd === "unlocked") { inaForwardHostCommand(event.data); return; }
+        if (command.cmd === "load" && typeof command.date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(command.date)) {
+          inaForwardHostCommand(event.data);
+        }
+      });
+
+      loadingBar.style.display = "block";
+
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+
+      script.onload = () => {
+        createUnityInstance(
+          canvas,
+          config,
+          (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
+            var percent = Math.round(progress * 100);
+            if (inariLoaderFill) inariLoaderFill.style.width = percent + "%";
+            if (inariLoaderPercent) inariLoaderPercent.textContent = percent + "%";
+            if (inariLoaderMessage) inariLoaderMessage.textContent = percent < 100 ? "Loading game assets…" : "Adding the final touches…";
+          }
+        )
+          .then((unityInstance) => {
+            loadingBar.style.display = "none";
+            // Unity exists now: deliver any host commands that arrived during boot.
+            inaUnityInstance = unityInstance;
+            var inaQueued = inaPendingHostCommands.splice(0, inaPendingHostCommands.length);
+            inaQueued.forEach(inaForwardHostCommand);
+            // Keep the branded loading card over Unity's built-in splash while
+            // the first scene finishes presenting; it avoids a white flash.
+            window.setTimeout(() => {
+              if (inariLoader) inariLoader.remove();
+            }, 900);
+
+            fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1);
+            };
+          })
+          .catch((message) => {
+            showLoaderError("The game could not start.");
+          });
+      };
+      script.onerror = () => showLoaderError("Game loader file could not be found.");
+
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>

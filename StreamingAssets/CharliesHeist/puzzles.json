@@ -1,0 +1,1509 @@
+{"puzzles":[{
+  "schema_version": "1.0-example",
+  "puzzle_id": "sample-2026-10-21",
+  "description": "Illustrative development fixture, not a published daily puzzle. City and year graph IDs are distinct. All answers and trivia keys intentionally included.",
+  "city": {
+    "origin_id": "city-q0-0",
+    "nodes": {
+      "city-q0-0": {
+        "label": "Prague",
+        "question_index": 0
+      },
+      "city-q1-0": {
+        "label": "Tokyo",
+        "question_index": 1
+      },
+      "city-q1-1": {
+        "label": "Vienna",
+        "question_index": 1
+      },
+      "city-q1-2": {
+        "label": "Cape Town",
+        "question_index": 1
+      },
+      "city-q2-0": {
+        "label": "Chennai",
+        "question_index": 2
+      },
+      "city-q2-1": {
+        "label": "Seattle",
+        "question_index": 2
+      },
+      "city-q2-2": {
+        "label": "Paris",
+        "question_index": 2
+      },
+      "city-q2-3": {
+        "label": "London",
+        "question_index": 2
+      },
+      "city-q2-4": {
+        "label": "Miami",
+        "question_index": 2
+      },
+      "city-q2-5": {
+        "label": "Rio de Janeiro",
+        "question_index": 2
+      },
+      "city-q3-0": {
+        "label": "Nairobi",
+        "question_index": 3
+      },
+      "city-q3-1": {
+        "label": "Oslo",
+        "question_index": 3
+      },
+      "city-q3-2": {
+        "label": "Lima",
+        "question_index": 3
+      },
+      "city-q3-3": {
+        "label": "Boston",
+        "question_index": 3
+      },
+      "city-q3-4": {
+        "label": "Madrid",
+        "question_index": 3
+      },
+      "city-q3-5": {
+        "label": "Hanoi",
+        "question_index": 3
+      },
+      "city-q4-0": {
+        "label": "Cairo",
+        "question_index": 4
+      },
+      "city-q4-1": {
+        "label": "Athens",
+        "question_index": 4
+      },
+      "city-q4-2": {
+        "label": "Dublin",
+        "question_index": 4
+      },
+      "city-q4-3": {
+        "label": "Seoul",
+        "question_index": 4
+      },
+      "city-q4-4": {
+        "label": "Jakarta",
+        "question_index": 4
+      },
+      "city-q4-5": {
+        "label": "Lisbon",
+        "question_index": 4
+      },
+      "city-q5-0": {
+        "label": "Berlin",
+        "question_index": 5
+      },
+      "city-q5-1": {
+        "label": "Accra",
+        "question_index": 5
+      },
+      "city-q5-2": {
+        "label": "Montreal",
+        "question_index": 5
+      },
+      "city-q5-3": {
+        "label": "Bangkok",
+        "question_index": 5
+      },
+      "city-q5-4": {
+        "label": "Zurich",
+        "question_index": 5
+      },
+      "city-q5-5": {
+        "label": "Manila",
+        "question_index": 5
+      },
+      "city-q6-0": {
+        "label": "Istanbul",
+        "question_index": 6
+      },
+      "city-q6-1": {
+        "label": "Warsaw",
+        "question_index": 6
+      },
+      "city-q6-2": {
+        "label": "Helsinki",
+        "question_index": 6
+      },
+      "city-q6-3": {
+        "label": "Bogota",
+        "question_index": 6
+      },
+      "city-q6-4": {
+        "label": "Mumbai",
+        "question_index": 6
+      },
+      "city-q6-5": {
+        "label": "Edinburgh",
+        "question_index": 6
+      },
+      "city-q7-0": {
+        "label": "Sydney",
+        "question_index": 7
+      },
+      "city-q7-1": {
+        "label": "Lagos",
+        "question_index": 7
+      },
+      "city-q7-2": {
+        "label": "Tallinn",
+        "question_index": 7
+      },
+      "city-q7-3": {
+        "label": "Amman",
+        "question_index": 7
+      },
+      "city-q7-4": {
+        "label": "Brussels",
+        "question_index": 7
+      },
+      "city-q7-5": {
+        "label": "Osaka",
+        "question_index": 7
+      },
+      "city-q8-0": {
+        "label": "Rome",
+        "question_index": 8
+      },
+      "city-q8-1": {
+        "label": "Kigali",
+        "question_index": 8
+      },
+      "city-q8-2": {
+        "label": "Taipei",
+        "question_index": 8
+      },
+      "city-q8-3": {
+        "label": "Doha",
+        "question_index": 8
+      },
+      "city-q8-4": {
+        "label": "Reykjavik",
+        "question_index": 8
+      },
+      "city-q8-5": {
+        "label": "Auckland",
+        "question_index": 8
+      },
+      "city-q9-0": {
+        "label": "Mexico City",
+        "question_index": 9
+      },
+      "city-q9-1": {
+        "label": "Marrakesh",
+        "question_index": 9
+      },
+      "city-q9-2": {
+        "label": "Stockholm",
+        "question_index": 9
+      },
+      "city-q9-3": {
+        "label": "Kuala Lumpur",
+        "question_index": 9
+      },
+      "city-q9-4": {
+        "label": "Budapest",
+        "question_index": 9
+      },
+      "city-q9-5": {
+        "label": "Santiago",
+        "question_index": 9
+      },
+      "city-q10-0": {
+        "label": "Barcelona",
+        "question_index": 10
+      },
+      "city-q10-1": {
+        "label": "Dubai",
+        "question_index": 10
+      },
+      "city-q10-2": {
+        "label": "Florence",
+        "question_index": 10
+      },
+      "city-q10-3": {
+        "label": "Kathmandu",
+        "question_index": 10
+      },
+      "city-q10-4": {
+        "label": "Havana",
+        "question_index": 10
+      },
+      "city-q10-5": {
+        "label": "Singapore",
+        "question_index": 10
+      }
+    },
+    "pools_by_question": {
+      "1": [
+        "city-q1-0",
+        "city-q1-1",
+        "city-q1-2"
+      ],
+      "2": [
+        "city-q2-0",
+        "city-q2-1",
+        "city-q2-2",
+        "city-q2-3",
+        "city-q2-4",
+        "city-q2-5"
+      ],
+      "3": [
+        "city-q3-0",
+        "city-q3-1",
+        "city-q3-2",
+        "city-q3-3",
+        "city-q3-4",
+        "city-q3-5"
+      ],
+      "4": [
+        "city-q4-0",
+        "city-q4-1",
+        "city-q4-2",
+        "city-q4-3",
+        "city-q4-4",
+        "city-q4-5"
+      ],
+      "5": [
+        "city-q5-0",
+        "city-q5-1",
+        "city-q5-2",
+        "city-q5-3",
+        "city-q5-4",
+        "city-q5-5"
+      ],
+      "6": [
+        "city-q6-0",
+        "city-q6-1",
+        "city-q6-2",
+        "city-q6-3",
+        "city-q6-4",
+        "city-q6-5"
+      ],
+      "7": [
+        "city-q7-0",
+        "city-q7-1",
+        "city-q7-2",
+        "city-q7-3",
+        "city-q7-4",
+        "city-q7-5"
+      ],
+      "8": [
+        "city-q8-0",
+        "city-q8-1",
+        "city-q8-2",
+        "city-q8-3",
+        "city-q8-4",
+        "city-q8-5"
+      ],
+      "9": [
+        "city-q9-0",
+        "city-q9-1",
+        "city-q9-2",
+        "city-q9-3",
+        "city-q9-4",
+        "city-q9-5"
+      ],
+      "10": [
+        "city-q10-0",
+        "city-q10-1",
+        "city-q10-2",
+        "city-q10-3",
+        "city-q10-4",
+        "city-q10-5"
+      ]
+    },
+    "correct_route": [
+      "city-q1-0",
+      "city-q2-0",
+      "city-q3-0",
+      "city-q4-0",
+      "city-q5-0",
+      "city-q6-0",
+      "city-q7-0",
+      "city-q8-0",
+      "city-q9-0",
+      "city-q10-0"
+    ],
+    "children_by_node": {
+      "city-q0-0": [
+        "city-q1-0",
+        "city-q1-1",
+        "city-q1-2"
+      ],
+      "city-q1-0": [
+        "city-q2-5",
+        "city-q2-0",
+        "city-q2-4"
+      ],
+      "city-q1-1": [
+        "city-q2-5",
+        "city-q2-4",
+        "city-q2-3"
+      ],
+      "city-q1-2": [
+        "city-q2-1",
+        "city-q2-2",
+        "city-q2-3"
+      ],
+      "city-q2-0": [
+        "city-q3-1",
+        "city-q3-0",
+        "city-q3-5"
+      ],
+      "city-q2-1": [
+        "city-q3-5",
+        "city-q3-3",
+        "city-q3-1"
+      ],
+      "city-q2-2": [
+        "city-q3-1",
+        "city-q3-2",
+        "city-q3-3"
+      ],
+      "city-q2-3": [
+        "city-q3-3",
+        "city-q3-2",
+        "city-q3-5"
+      ],
+      "city-q2-4": [
+        "city-q3-5",
+        "city-q3-3",
+        "city-q3-2"
+      ],
+      "city-q2-5": [
+        "city-q3-2",
+        "city-q3-1",
+        "city-q3-4"
+      ],
+      "city-q3-0": [
+        "city-q4-4",
+        "city-q4-0",
+        "city-q4-3"
+      ],
+      "city-q3-1": [
+        "city-q4-2",
+        "city-q4-5",
+        "city-q4-4"
+      ],
+      "city-q3-2": [
+        "city-q4-2",
+        "city-q4-4",
+        "city-q4-5"
+      ],
+      "city-q3-3": [
+        "city-q4-3",
+        "city-q4-5",
+        "city-q4-2"
+      ],
+      "city-q3-4": [
+        "city-q4-4",
+        "city-q4-2",
+        "city-q4-3"
+      ],
+      "city-q3-5": [
+        "city-q4-1",
+        "city-q4-5",
+        "city-q4-3"
+      ],
+      "city-q4-0": [
+        "city-q5-0",
+        "city-q5-5",
+        "city-q5-1"
+      ],
+      "city-q4-1": [
+        "city-q5-1",
+        "city-q5-5",
+        "city-q5-2"
+      ],
+      "city-q4-2": [
+        "city-q5-3",
+        "city-q5-5",
+        "city-q5-2"
+      ],
+      "city-q4-3": [
+        "city-q5-5",
+        "city-q5-1",
+        "city-q5-3"
+      ],
+      "city-q4-4": [
+        "city-q5-2",
+        "city-q5-3",
+        "city-q5-4"
+      ],
+      "city-q4-5": [
+        "city-q5-3",
+        "city-q5-2",
+        "city-q5-1"
+      ],
+      "city-q5-0": [
+        "city-q6-1",
+        "city-q6-2",
+        "city-q6-0"
+      ],
+      "city-q5-1": [
+        "city-q6-1",
+        "city-q6-3",
+        "city-q6-4"
+      ],
+      "city-q5-2": [
+        "city-q6-5",
+        "city-q6-1",
+        "city-q6-3"
+      ],
+      "city-q5-3": [
+        "city-q6-2",
+        "city-q6-3",
+        "city-q6-4"
+      ],
+      "city-q5-4": [
+        "city-q6-4",
+        "city-q6-3",
+        "city-q6-2"
+      ],
+      "city-q5-5": [
+        "city-q6-1",
+        "city-q6-4",
+        "city-q6-2"
+      ],
+      "city-q6-0": [
+        "city-q7-0",
+        "city-q7-1",
+        "city-q7-4"
+      ],
+      "city-q6-1": [
+        "city-q7-1",
+        "city-q7-2",
+        "city-q7-4"
+      ],
+      "city-q6-2": [
+        "city-q7-2",
+        "city-q7-1",
+        "city-q7-5"
+      ],
+      "city-q6-3": [
+        "city-q7-5",
+        "city-q7-3",
+        "city-q7-2"
+      ],
+      "city-q6-4": [
+        "city-q7-5",
+        "city-q7-4",
+        "city-q7-2"
+      ],
+      "city-q6-5": [
+        "city-q7-5",
+        "city-q7-1",
+        "city-q7-4"
+      ],
+      "city-q7-0": [
+        "city-q8-1",
+        "city-q8-0",
+        "city-q8-2"
+      ],
+      "city-q7-1": [
+        "city-q8-4",
+        "city-q8-5",
+        "city-q8-2"
+      ],
+      "city-q7-2": [
+        "city-q8-4",
+        "city-q8-2",
+        "city-q8-5"
+      ],
+      "city-q7-3": [
+        "city-q8-3",
+        "city-q8-5",
+        "city-q8-1"
+      ],
+      "city-q7-4": [
+        "city-q8-4",
+        "city-q8-2",
+        "city-q8-1"
+      ],
+      "city-q7-5": [
+        "city-q8-1",
+        "city-q8-4",
+        "city-q8-5"
+      ],
+      "city-q8-0": [
+        "city-q9-2",
+        "city-q9-4",
+        "city-q9-0"
+      ],
+      "city-q8-1": [
+        "city-q9-4",
+        "city-q9-2",
+        "city-q9-5"
+      ],
+      "city-q8-2": [
+        "city-q9-2",
+        "city-q9-3",
+        "city-q9-4"
+      ],
+      "city-q8-3": [
+        "city-q9-4",
+        "city-q9-5",
+        "city-q9-3"
+      ],
+      "city-q8-4": [
+        "city-q9-1",
+        "city-q9-3",
+        "city-q9-5"
+      ],
+      "city-q8-5": [
+        "city-q9-5",
+        "city-q9-3",
+        "city-q9-2"
+      ],
+      "city-q9-0": [
+        "city-q10-0",
+        "city-q10-5",
+        "city-q10-3"
+      ],
+      "city-q9-1": [
+        "city-q10-3",
+        "city-q10-1",
+        "city-q10-4"
+      ],
+      "city-q9-2": [
+        "city-q10-5",
+        "city-q10-4",
+        "city-q10-1"
+      ],
+      "city-q9-3": [
+        "city-q10-3",
+        "city-q10-4",
+        "city-q10-1"
+      ],
+      "city-q9-4": [
+        "city-q10-5",
+        "city-q10-4",
+        "city-q10-3"
+      ],
+      "city-q9-5": [
+        "city-q10-2",
+        "city-q10-1",
+        "city-q10-5"
+      ],
+      "city-q10-0": [],
+      "city-q10-1": [],
+      "city-q10-2": [],
+      "city-q10-3": [],
+      "city-q10-4": [],
+      "city-q10-5": []
+    }
+  },
+  "year": {
+    "origin_id": "year-q0-0",
+    "nodes": {
+      "year-q0-0": {
+        "label": "1889",
+        "question_index": 0
+      },
+      "year-q1-0": {
+        "label": "1969",
+        "question_index": 1
+      },
+      "year-q1-1": {
+        "label": "1912",
+        "question_index": 1
+      },
+      "year-q1-2": {
+        "label": "1989",
+        "question_index": 1
+      },
+      "year-q2-0": {
+        "label": "1947",
+        "question_index": 2
+      },
+      "year-q2-1": {
+        "label": "1955",
+        "question_index": 2
+      },
+      "year-q2-2": {
+        "label": "1977",
+        "question_index": 2
+      },
+      "year-q2-3": {
+        "label": "2001",
+        "question_index": 2
+      },
+      "year-q2-4": {
+        "label": "1929",
+        "question_index": 2
+      },
+      "year-q2-5": {
+        "label": "1963",
+        "question_index": 2
+      },
+      "year-q3-0": {
+        "label": "1994",
+        "question_index": 3
+      },
+      "year-q3-1": {
+        "label": "1936",
+        "question_index": 3
+      },
+      "year-q3-2": {
+        "label": "2010",
+        "question_index": 3
+      },
+      "year-q3-3": {
+        "label": "1971",
+        "question_index": 3
+      },
+      "year-q3-4": {
+        "label": "1903",
+        "question_index": 3
+      },
+      "year-q3-5": {
+        "label": "1980",
+        "question_index": 3
+      },
+      "year-q4-0": {
+        "label": "1960",
+        "question_index": 4
+      },
+      "year-q4-1": {
+        "label": "1920",
+        "question_index": 4
+      },
+      "year-q4-2": {
+        "label": "2008",
+        "question_index": 4
+      },
+      "year-q4-3": {
+        "label": "1945",
+        "question_index": 4
+      },
+      "year-q4-4": {
+        "label": "1979",
+        "question_index": 4
+      },
+      "year-q4-5": {
+        "label": "1999",
+        "question_index": 4
+      },
+      "year-q5-0": {
+        "label": "1983",
+        "question_index": 5
+      },
+      "year-q5-1": {
+        "label": "1918",
+        "question_index": 5
+      },
+      "year-q5-2": {
+        "label": "1957",
+        "question_index": 5
+      },
+      "year-q5-3": {
+        "label": "2004",
+        "question_index": 5
+      },
+      "year-q5-4": {
+        "label": "1932",
+        "question_index": 5
+      },
+      "year-q5-5": {
+        "label": "1974",
+        "question_index": 5
+      },
+      "year-q6-0": {
+        "label": "2000",
+        "question_index": 6
+      },
+      "year-q6-1": {
+        "label": "1948",
+        "question_index": 6
+      },
+      "year-q6-2": {
+        "label": "1966",
+        "question_index": 6
+      },
+      "year-q6-3": {
+        "label": "1986",
+        "question_index": 6
+      },
+      "year-q6-4": {
+        "label": "2015",
+        "question_index": 6
+      },
+      "year-q6-5": {
+        "label": "1927",
+        "question_index": 6
+      },
+      "year-q7-0": {
+        "label": "1990",
+        "question_index": 7
+      },
+      "year-q7-1": {
+        "label": "1905",
+        "question_index": 7
+      },
+      "year-q7-2": {
+        "label": "1976",
+        "question_index": 7
+      },
+      "year-q7-3": {
+        "label": "1953",
+        "question_index": 7
+      },
+      "year-q7-4": {
+        "label": "2012",
+        "question_index": 7
+      },
+      "year-q7-5": {
+        "label": "1939",
+        "question_index": 7
+      },
+      "year-q8-0": {
+        "label": "1964",
+        "question_index": 8
+      },
+      "year-q8-1": {
+        "label": "1981",
+        "question_index": 8
+      },
+      "year-q8-2": {
+        "label": "2006",
+        "question_index": 8
+      },
+      "year-q8-3": {
+        "label": "1942",
+        "question_index": 8
+      },
+      "year-q8-4": {
+        "label": "1997",
+        "question_index": 8
+      },
+      "year-q8-5": {
+        "label": "1923",
+        "question_index": 8
+      },
+      "year-q9-0": {
+        "label": "2007",
+        "question_index": 9
+      },
+      "year-q9-1": {
+        "label": "1959",
+        "question_index": 9
+      },
+      "year-q9-2": {
+        "label": "1931",
+        "question_index": 9
+      },
+      "year-q9-3": {
+        "label": "2018",
+        "question_index": 9
+      },
+      "year-q9-4": {
+        "label": "1972",
+        "question_index": 9
+      },
+      "year-q9-5": {
+        "label": "1988",
+        "question_index": 9
+      },
+      "year-q10-0": {
+        "label": "1991",
+        "question_index": 10
+      },
+      "year-q10-1": {
+        "label": "1919",
+        "question_index": 10
+      },
+      "year-q10-2": {
+        "label": "1968",
+        "question_index": 10
+      },
+      "year-q10-3": {
+        "label": "2003",
+        "question_index": 10
+      },
+      "year-q10-4": {
+        "label": "1940",
+        "question_index": 10
+      },
+      "year-q10-5": {
+        "label": "2016",
+        "question_index": 10
+      }
+    },
+    "pools_by_question": {
+      "1": [
+        "year-q1-0",
+        "year-q1-1",
+        "year-q1-2"
+      ],
+      "2": [
+        "year-q2-0",
+        "year-q2-1",
+        "year-q2-2",
+        "year-q2-3",
+        "year-q2-4",
+        "year-q2-5"
+      ],
+      "3": [
+        "year-q3-0",
+        "year-q3-1",
+        "year-q3-2",
+        "year-q3-3",
+        "year-q3-4",
+        "year-q3-5"
+      ],
+      "4": [
+        "year-q4-0",
+        "year-q4-1",
+        "year-q4-2",
+        "year-q4-3",
+        "year-q4-4",
+        "year-q4-5"
+      ],
+      "5": [
+        "year-q5-0",
+        "year-q5-1",
+        "year-q5-2",
+        "year-q5-3",
+        "year-q5-4",
+        "year-q5-5"
+      ],
+      "6": [
+        "year-q6-0",
+        "year-q6-1",
+        "year-q6-2",
+        "year-q6-3",
+        "year-q6-4",
+        "year-q6-5"
+      ],
+      "7": [
+        "year-q7-0",
+        "year-q7-1",
+        "year-q7-2",
+        "year-q7-3",
+        "year-q7-4",
+        "year-q7-5"
+      ],
+      "8": [
+        "year-q8-0",
+        "year-q8-1",
+        "year-q8-2",
+        "year-q8-3",
+        "year-q8-4",
+        "year-q8-5"
+      ],
+      "9": [
+        "year-q9-0",
+        "year-q9-1",
+        "year-q9-2",
+        "year-q9-3",
+        "year-q9-4",
+        "year-q9-5"
+      ],
+      "10": [
+        "year-q10-0",
+        "year-q10-1",
+        "year-q10-2",
+        "year-q10-3",
+        "year-q10-4",
+        "year-q10-5"
+      ]
+    },
+    "correct_route": [
+      "year-q1-0",
+      "year-q2-0",
+      "year-q3-0",
+      "year-q4-0",
+      "year-q5-0",
+      "year-q6-0",
+      "year-q7-0",
+      "year-q8-0",
+      "year-q9-0",
+      "year-q10-0"
+    ],
+    "children_by_node": {
+      "year-q0-0": [
+        "year-q1-0",
+        "year-q1-1",
+        "year-q1-2"
+      ],
+      "year-q1-0": [
+        "year-q2-5",
+        "year-q2-1",
+        "year-q2-0"
+      ],
+      "year-q1-1": [
+        "year-q2-3",
+        "year-q2-5",
+        "year-q2-1"
+      ],
+      "year-q1-2": [
+        "year-q2-4",
+        "year-q2-2",
+        "year-q2-3"
+      ],
+      "year-q2-0": [
+        "year-q3-1",
+        "year-q3-2",
+        "year-q3-0"
+      ],
+      "year-q2-1": [
+        "year-q3-5",
+        "year-q3-3",
+        "year-q3-1"
+      ],
+      "year-q2-2": [
+        "year-q3-5",
+        "year-q3-3",
+        "year-q3-2"
+      ],
+      "year-q2-3": [
+        "year-q3-5",
+        "year-q3-1",
+        "year-q3-2"
+      ],
+      "year-q2-4": [
+        "year-q3-3",
+        "year-q3-2",
+        "year-q3-5"
+      ],
+      "year-q2-5": [
+        "year-q3-4",
+        "year-q3-1",
+        "year-q3-3"
+      ],
+      "year-q3-0": [
+        "year-q4-0",
+        "year-q4-2",
+        "year-q4-4"
+      ],
+      "year-q3-1": [
+        "year-q4-1",
+        "year-q4-4",
+        "year-q4-2"
+      ],
+      "year-q3-2": [
+        "year-q4-2",
+        "year-q4-5",
+        "year-q4-4"
+      ],
+      "year-q3-3": [
+        "year-q4-1",
+        "year-q4-3",
+        "year-q4-5"
+      ],
+      "year-q3-4": [
+        "year-q4-1",
+        "year-q4-2",
+        "year-q4-5"
+      ],
+      "year-q3-5": [
+        "year-q4-4",
+        "year-q4-5",
+        "year-q4-1"
+      ],
+      "year-q4-0": [
+        "year-q5-3",
+        "year-q5-0",
+        "year-q5-5"
+      ],
+      "year-q4-1": [
+        "year-q5-4",
+        "year-q5-3",
+        "year-q5-2"
+      ],
+      "year-q4-2": [
+        "year-q5-2",
+        "year-q5-3",
+        "year-q5-4"
+      ],
+      "year-q4-3": [
+        "year-q5-2",
+        "year-q5-5",
+        "year-q5-4"
+      ],
+      "year-q4-4": [
+        "year-q5-3",
+        "year-q5-5",
+        "year-q5-2"
+      ],
+      "year-q4-5": [
+        "year-q5-4",
+        "year-q5-5",
+        "year-q5-1"
+      ],
+      "year-q5-0": [
+        "year-q6-1",
+        "year-q6-5",
+        "year-q6-0"
+      ],
+      "year-q5-1": [
+        "year-q6-2",
+        "year-q6-1",
+        "year-q6-4"
+      ],
+      "year-q5-2": [
+        "year-q6-2",
+        "year-q6-1",
+        "year-q6-5"
+      ],
+      "year-q5-3": [
+        "year-q6-2",
+        "year-q6-5",
+        "year-q6-4"
+      ],
+      "year-q5-4": [
+        "year-q6-5",
+        "year-q6-4",
+        "year-q6-3"
+      ],
+      "year-q5-5": [
+        "year-q6-2",
+        "year-q6-1",
+        "year-q6-4"
+      ],
+      "year-q6-0": [
+        "year-q7-1",
+        "year-q7-0",
+        "year-q7-2"
+      ],
+      "year-q6-1": [
+        "year-q7-4",
+        "year-q7-5",
+        "year-q7-1"
+      ],
+      "year-q6-2": [
+        "year-q7-2",
+        "year-q7-1",
+        "year-q7-4"
+      ],
+      "year-q6-3": [
+        "year-q7-2",
+        "year-q7-4",
+        "year-q7-5"
+      ],
+      "year-q6-4": [
+        "year-q7-2",
+        "year-q7-5",
+        "year-q7-3"
+      ],
+      "year-q6-5": [
+        "year-q7-1",
+        "year-q7-5",
+        "year-q7-4"
+      ],
+      "year-q7-0": [
+        "year-q8-4",
+        "year-q8-2",
+        "year-q8-0"
+      ],
+      "year-q7-1": [
+        "year-q8-3",
+        "year-q8-1",
+        "year-q8-2"
+      ],
+      "year-q7-2": [
+        "year-q8-3",
+        "year-q8-1",
+        "year-q8-4"
+      ],
+      "year-q7-3": [
+        "year-q8-4",
+        "year-q8-1",
+        "year-q8-2"
+      ],
+      "year-q7-4": [
+        "year-q8-4",
+        "year-q8-1",
+        "year-q8-3"
+      ],
+      "year-q7-5": [
+        "year-q8-2",
+        "year-q8-3",
+        "year-q8-5"
+      ],
+      "year-q8-0": [
+        "year-q9-1",
+        "year-q9-2",
+        "year-q9-0"
+      ],
+      "year-q8-1": [
+        "year-q9-4",
+        "year-q9-1",
+        "year-q9-2"
+      ],
+      "year-q8-2": [
+        "year-q9-4",
+        "year-q9-5",
+        "year-q9-2"
+      ],
+      "year-q8-3": [
+        "year-q9-5",
+        "year-q9-4",
+        "year-q9-1"
+      ],
+      "year-q8-4": [
+        "year-q9-5",
+        "year-q9-2",
+        "year-q9-4"
+      ],
+      "year-q8-5": [
+        "year-q9-3",
+        "year-q9-1",
+        "year-q9-5"
+      ],
+      "year-q9-0": [
+        "year-q10-2",
+        "year-q10-3",
+        "year-q10-0"
+      ],
+      "year-q9-1": [
+        "year-q10-1",
+        "year-q10-4",
+        "year-q10-3"
+      ],
+      "year-q9-2": [
+        "year-q10-4",
+        "year-q10-5",
+        "year-q10-2"
+      ],
+      "year-q9-3": [
+        "year-q10-1",
+        "year-q10-2",
+        "year-q10-3"
+      ],
+      "year-q9-4": [
+        "year-q10-4",
+        "year-q10-3",
+        "year-q10-1"
+      ],
+      "year-q9-5": [
+        "year-q10-4",
+        "year-q10-2",
+        "year-q10-1"
+      ],
+      "year-q10-0": [],
+      "year-q10-1": [],
+      "year-q10-2": [],
+      "year-q10-3": [],
+      "year-q10-4": [],
+      "year-q10-5": []
+    }
+  },
+  "questions": [
+    {
+      "index": 1,
+      "city_clue_text": "Charlie elbowed through the Shibuya crossing in this city.",
+      "year_clue_text": "annoyed that the first humans on the Moon had beaten her to making a dramatic entrance.",
+      "correct_city_id": "city-q1-0",
+      "correct_year_id": "year-q1-0",
+      "year_trivia": {
+        "prompt": "Which mission first landed humans on the Moon?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Apollo 11"
+          },
+          {
+            "id": "b",
+            "text": "Apollo 13"
+          },
+          {
+            "id": "c",
+            "text": "Gemini 4"
+          },
+          {
+            "id": "d",
+            "text": "Vostok 1"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "Shibuya's scramble crossing is the one crowd Charlie would choose to elbow through — it is Tokyo's own front door.",
+      "year_explanation": "Apollo 11 put the first humans on the Moon in 1969 — the original dramatic entrance, and the one that beat her to it."
+    },
+    {
+      "index": 2,
+      "city_clue_text": "Charlie bargained for a plate of idli in this southern Indian city.",
+      "year_clue_text": "while pondering the year India gained independence.",
+      "correct_city_id": "city-q2-0",
+      "correct_year_id": "year-q2-0",
+      "year_trivia": {
+        "prompt": "Which country gained independence from Britain in the year referenced by the clue?",
+        "options": [
+          {
+            "id": "a",
+            "text": "India"
+          },
+          {
+            "id": "b",
+            "text": "Kenya"
+          },
+          {
+            "id": "c",
+            "text": "Ghana"
+          },
+          {
+            "id": "d",
+            "text": "Malaysia"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "Idli are South Indian staples, and the city where Charlie haggles over a plate is Chennai, their heartland.",
+      "year_explanation": "India gained independence from British rule in 1947 — the year Charlie keeps turning over."
+    },
+    {
+      "index": 3,
+      "city_clue_text": "Charlie chased a stolen briefcase through this East African capital.",
+      "year_clue_text": "wondering which leader became South Africa’s first Black president.",
+      "correct_city_id": "city-q3-0",
+      "correct_year_id": "year-q3-0",
+      "year_trivia": {
+        "prompt": "Who became South Africa’s first Black president?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Nelson Mandela"
+          },
+          {
+            "id": "b",
+            "text": "Desmond Tutu"
+          },
+          {
+            "id": "c",
+            "text": "Thabo Mbeki"
+          },
+          {
+            "id": "d",
+            "text": "F. W. de Klerk"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "Nairobi is the East African capital Charlie is chasing a stolen briefcase through.",
+      "year_explanation": "In 1994 Nelson Mandela became South Africa's first Black president — the fact Charlie is mulling over."
+    },
+    {
+      "index": 4,
+      "city_clue_text": "Charlie negotiated beside the Nile in this Egyptian capital.",
+      "year_clue_text": "as the year of the first televised U.S. presidential debates came to mind.",
+      "correct_city_id": "city-q4-0",
+      "correct_year_id": "year-q4-0",
+      "year_trivia": {
+        "prompt": "Which pair took part in the first televised U.S. presidential debate?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Kennedy and Nixon"
+          },
+          {
+            "id": "b",
+            "text": "Carter and Ford"
+          },
+          {
+            "id": "c",
+            "text": "Reagan and Mondale"
+          },
+          {
+            "id": "d",
+            "text": "Eisenhower and Stevenson"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "Cairo is the Egyptian capital on the Nile — the only place Charlie could negotiate beside it.",
+      "year_explanation": "The first televised U.S. presidential debate, Kennedy and Nixon, aired in 1960."
+    },
+    {
+      "index": 5,
+      "city_clue_text": "Charlie tried to look inconspicuous near the Brandenburg Gate in this German capital.",
+      "year_clue_text": "remembering the year the first American woman traveled into space.",
+      "correct_city_id": "city-q5-0",
+      "correct_year_id": "year-q5-0",
+      "year_trivia": {
+        "prompt": "Who became the first American woman in space?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sally Ride"
+          },
+          {
+            "id": "b",
+            "text": "Valentina Tereshkova"
+          },
+          {
+            "id": "c",
+            "text": "Mae Jemison"
+          },
+          {
+            "id": "d",
+            "text": "Eileen Collins"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "The Brandenburg Gate stands in Berlin, which is why Charlie is trying, badly, to look inconspicuous there.",
+      "year_explanation": "Sally Ride became the first American woman in space in 1983 — the year Charlie is remembering."
+    },
+    {
+      "index": 6,
+      "city_clue_text": "Charlie slipped into the Grand Bazaar in this Turkish city.",
+      "year_clue_text": "thinking about the year the world celebrated the arrival of the new millennium.",
+      "correct_city_id": "city-q6-0",
+      "correct_year_id": "year-q6-0",
+      "year_trivia": {
+        "prompt": "Which year was widely celebrated as the start of the new millennium on New Year’s Eve?",
+        "options": [
+          {
+            "id": "a",
+            "text": "2000"
+          },
+          {
+            "id": "b",
+            "text": "2001"
+          },
+          {
+            "id": "c",
+            "text": "1999"
+          },
+          {
+            "id": "d",
+            "text": "2002"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "The Grand Bazaar is Istanbul's own maze of a market — slipping into it is a professional move.",
+      "year_explanation": "The arrival of the new millennium was widely celebrated on New Year's Eve into the year 2000."
+    },
+    {
+      "index": 7,
+      "city_clue_text": "Charlie ducked past the Opera House in this Australian city.",
+      "year_clue_text": "recalling the year Nelson Mandela was released from prison.",
+      "correct_city_id": "city-q7-0",
+      "correct_year_id": "year-q7-0",
+      "year_trivia": {
+        "prompt": "In which country was Nelson Mandela released from prison?",
+        "options": [
+          {
+            "id": "a",
+            "text": "South Africa"
+          },
+          {
+            "id": "b",
+            "text": "Zimbabwe"
+          },
+          {
+            "id": "c",
+            "text": "Namibia"
+          },
+          {
+            "id": "d",
+            "text": "Botswana"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "That Opera House on the harbour is Sydney's — Charlie ducked right past it.",
+      "year_explanation": "Nelson Mandela was released from prison in South Africa in 1990, the year Charlie is recalling."
+    },
+    {
+      "index": 8,
+      "city_clue_text": "Charlie sprinted past the Colosseum in this Italian city.",
+      "year_clue_text": "musing about the year the Civil Rights Act was signed in the United States.",
+      "correct_city_id": "city-q8-0",
+      "correct_year_id": "year-q8-0",
+      "year_trivia": {
+        "prompt": "Which U.S. president signed the Civil Rights Act referenced by the clue?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Lyndon B. Johnson"
+          },
+          {
+            "id": "b",
+            "text": "John F. Kennedy"
+          },
+          {
+            "id": "c",
+            "text": "Richard Nixon"
+          },
+          {
+            "id": "d",
+            "text": "Dwight Eisenhower"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "The only city with a Colosseum to sprint past is Rome.",
+      "year_explanation": "Lyndon B. Johnson signed the Civil Rights Act into law in the United States in 1964."
+    },
+    {
+      "index": 9,
+      "city_clue_text": "Charlie inspected a suspicious suitcase in this Mexican capital.",
+      "year_clue_text": "remembering the year the first iPhone was introduced.",
+      "correct_city_id": "city-q9-0",
+      "correct_year_id": "year-q9-0",
+      "year_trivia": {
+        "prompt": "Which company introduced the first iPhone?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Apple"
+          },
+          {
+            "id": "b",
+            "text": "Nokia"
+          },
+          {
+            "id": "c",
+            "text": "Motorola"
+          },
+          {
+            "id": "d",
+            "text": "BlackBerry"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "The Mexican capital is Mexico City — exactly where Charlie would be eyeing a suspicious suitcase.",
+      "year_explanation": "Apple introduced the first iPhone in 2007 — the launch Charlie is remembering."
+    },
+    {
+      "index": 10,
+      "city_clue_text": "Charlie hid a diamond near La Rambla in this Spanish city.",
+      "year_clue_text": "recalling the year the Soviet Union formally dissolved.",
+      "correct_city_id": "city-q10-0",
+      "correct_year_id": "year-q10-0",
+      "year_trivia": {
+        "prompt": "Which state formally dissolved in the year referenced by the clue?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Soviet Union"
+          },
+          {
+            "id": "b",
+            "text": "Yugoslavia"
+          },
+          {
+            "id": "c",
+            "text": "Czechoslovakia"
+          },
+          {
+            "id": "d",
+            "text": "East Germany"
+          }
+        ],
+        "correct_option_id": "a"
+      },
+      "city_explanation": "La Rambla is Barcelona's great promenade — and now the place a diamond is somewhere near.",
+      "year_explanation": "The Soviet Union formally dissolved in 1991 — the end of an era Charlie could not help noticing."
+    }
+  ]
+}]}
